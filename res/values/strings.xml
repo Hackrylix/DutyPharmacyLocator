@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Duty Pharmacy Locator</string>
+    <string name="main">Map</string>
+    <string name="log">Positions</string>
+    <string name="quit">Exit</string>
+    <string name="load">Load</string>
+    <string name="save">Save</string>
+    <string name="refresh">Refresh</string>
+    <string name="gps">GPS</string>
+    <string name="net">NETWORK</string>
+
+</resources>

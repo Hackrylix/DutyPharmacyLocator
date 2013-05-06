@@ -1,12 +1,11 @@
 package be.itsworking.dpl.activities;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.LinearLayout;
@@ -14,6 +13,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import be.itsworking.dpl.MyPharmacyManager;
+import be.itsworking.dpl.R;
 import be.itsworking.dpl.to.MyPharmacy;
 
 public class MyListActivity extends Activity implements OnLongClickListener
@@ -29,6 +29,27 @@ public class MyListActivity extends Activity implements OnLongClickListener
 		refresh();
 
 	}
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.mainmenu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		// Handle item selection
+		switch (item.getItemId())
+		{
+			case R.id.item1:
+				finish();
+				return true;
+
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
 
 	@Override
 	protected void onResume()
@@ -39,52 +60,40 @@ public class MyListActivity extends Activity implements OnLongClickListener
 
 	private void refresh()
 	{
+		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
+		ScrollView scrollView = new ScrollView(getApplicationContext());
 		
+		linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-		LinearLayout ll = new LinearLayout(getApplicationContext());
-		ScrollView sc = new ScrollView(getApplicationContext());
-		
-		ll.setOrientation(LinearLayout.VERTICAL);
-
-		ArrayList<MyPharmacy> list = myPharmacyManager.getPharmacyList();
-		for (int i = 0; i < list.size(); i++)
+		for (MyPharmacy pharmacy : myPharmacyManager.getPharmacyList())
 		{
-			MyPharmacy pharmacy = list.get(i);
-			TextView tv = new TextView(getApplicationContext());
-			tv.setText(pharmacy.toCSV(), BufferType.NORMAL);
-			tv.setLongClickable(true);
-			tv.setOnLongClickListener(this);
-			ll.addView(tv);
+			TextView textView = new TextView(getApplicationContext());
+			textView.setText(String.valueOf(pharmacy.getId()), BufferType.NORMAL);
+			textView.setLongClickable(true);
+			textView.setOnLongClickListener(this);
+			linearLayout.addView(textView);
 		}
 		
-		sc.addView(ll);
-		setContentView(sc);
+		scrollView.addView(linearLayout);
+		setContentView(scrollView);
 
 	}
 
-	
 
 	@Override
-	public boolean onLongClick(View v)
+	public boolean onLongClick(View view)
 	{
-		if (v instanceof TextView)
+		if (view instanceof TextView)
 		{
-			TextView tv = (TextView) v;
-			String[] arr = ((String) tv.getText().toString()).split(";");
-			Intent mi = new Intent(this, MyPharmacyActivity.class);
-			mi.putExtra("PHARMACY_ID", arr[0]);
+			TextView textView = (TextView) view;
+			Intent myPharmacyIntent = new Intent(this, MyPharmacyActivity.class);
+			myPharmacyIntent.putExtra("PHARMACY_ID", textView.getText().toString());
 			
-			startActivity(mi);
+			startActivity(myPharmacyIntent);
 			return true;
 		}
 
 		return false;
-	}
-
-	private void log(String string)
-	{
-		System.out.println(string);
-
 	}
 
 }

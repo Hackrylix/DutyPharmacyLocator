@@ -28,7 +28,8 @@ public class MyLocationManager implements LocationListener
 	{
 		this.activity = app;
 		this.track = track;
-		this.lm = (LocationManager) app.getSystemService(Context.LOCATION_SERVICE);
+		this.lm = (LocationManager) app
+				.getSystemService(Context.LOCATION_SERVICE);
 		selectBestProvider();
 		this.minTime = 1000;
 		this.metre = 1;
@@ -58,7 +59,8 @@ public class MyLocationManager implements LocationListener
 		if (currentLocation == null)
 			if (!getLastKnown())
 				log("no last loc !!!");
-		return new GeoPoint((int) (currentLocation.getLatitude() * 1E6), (int) (currentLocation.getLongitude() * 1E6));
+		return new GeoPoint((int) (currentLocation.getLatitude() * 1E6),
+				(int) (currentLocation.getLongitude() * 1E6));
 	}
 
 	public Location getCurrentLocation()
@@ -68,7 +70,8 @@ public class MyLocationManager implements LocationListener
 
 	public boolean getLastKnown()
 	{
-		Location loc = lm.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+		Location loc = lm
+				.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
 		if (loc == null)
 			return false;
 		else
@@ -81,7 +84,6 @@ public class MyLocationManager implements LocationListener
 	@Override
 	public void onLocationChanged(Location location)
 	{
-
 		updateLocation(location);
 	}
 
@@ -133,7 +135,8 @@ public class MyLocationManager implements LocationListener
 	public void initListener()
 	{
 		if (lm == null)
-			lm = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
+			lm = (LocationManager) activity
+					.getSystemService(Context.LOCATION_SERVICE);
 
 		if (track)
 			lm.requestLocationUpdates(provider, minTime * 1000, metre, this);
@@ -148,7 +151,6 @@ public class MyLocationManager implements LocationListener
 		lm.removeUpdates(this);
 		log("listener stop");
 	}
-
 
 	public String getProvider()
 	{

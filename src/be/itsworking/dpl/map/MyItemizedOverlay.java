@@ -1,4 +1,4 @@
-package be.itsworking.dpl;
+package be.itsworking.dpl.map;
 
 import java.util.ArrayList;
 
@@ -11,38 +11,37 @@ import com.google.android.maps.OverlayItem;
 
 public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem>
 {
-	protected ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
-	protected Activity mContext;
+	protected ArrayList<OverlayItem> olverlayList = new ArrayList<OverlayItem>();
+	protected Activity activity;
 	protected Drawable marker;
 
-	public MyItemizedOverlay(Drawable defaultMarker, Activity context)
+	public MyItemizedOverlay(Drawable defaultMarker, Activity activity)
 	{
 		super(defaultMarker);
-		mContext = context;
-		marker=defaultMarker;
+		this.activity = activity;
+		marker = defaultMarker;
 	}
 
 	@Override
 	protected boolean onTap(int index)
 	{
-		OverlayItem item = mOverlays.get(index);
-		Util.showMessage(mContext,item.getTitle()+"\n"+item.getSnippet());
+		OverlayItem item = olverlayList.get(index);
+		Util.showMessage(activity, item.getTitle() + "\n" + item.getSnippet());
 		return true;
 	}
-	
 
 	public void addOverlay(OverlayItem overlay)
 	{
-		mOverlays.add(overlay);
+		olverlayList.add(overlay);
 		populate();
 	}
 
 	@Override
 	protected OverlayItem createItem(int i)
 	{
-		return mOverlays.get(i);
+		return olverlayList.get(i);
 	}
-	
+
 	public Drawable getMarker()
 	{
 		return marker;
@@ -51,8 +50,7 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem>
 	@Override
 	public int size()
 	{
-		return mOverlays.size();
-
+		return olverlayList.size();
 	}
 
 }

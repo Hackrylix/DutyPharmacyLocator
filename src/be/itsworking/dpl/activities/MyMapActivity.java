@@ -17,10 +17,10 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.ToggleButton;
-import be.itsworking.dpl.MyLocationItemizedOverlay;
-import be.itsworking.dpl.MyPharmacyItemizedOverlay;
 import be.itsworking.dpl.MyPharmacyManager;
 import be.itsworking.dpl.R;
+import be.itsworking.dpl.map.MyLocationItemizedOverlay;
+import be.itsworking.dpl.map.MyPharmacyItemizedOverlay;
 import be.itsworking.dpl.to.MyPharmacy;
 import be.itsworking.dpl.tools.Util;
 
@@ -40,17 +40,15 @@ public class MyMapActivity extends MapActivity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.maptabview);
 
 		mapView = (MapView) findViewById(R.id.mapview);
-		
+
 		ToggleButton track = (ToggleButton) findViewById(R.id.trackButton);
 		myPharmacyManager = new MyPharmacyManager(this, track.isChecked());
-		
-		
-		track.setOnCheckedChangeListener(new OnCheckedChangeListener()
-		{
+
+		track.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
@@ -58,22 +56,20 @@ public class MyMapActivity extends MapActivity
 				myPharmacyManager.setTrack(isChecked);
 			}
 		});
-		
+
 		Button refresh = (Button) findViewById(R.id.refreshButton);
-		refresh.setOnClickListener(new OnClickListener()
-		{
-			
+		refresh.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v)
 			{
 				myPharmacyManager.requestUpdate();
-				
+
 			}
 		});
-		
 
-		//myPharmacyManager.loadAll();
-		//refreshMap();
+		// myPharmacyManager.loadAll();
+		// refreshMap();
 		// myPharmacyManager.saveAll(this);
 
 	}
@@ -117,9 +113,13 @@ public class MyMapActivity extends MapActivity
 	{
 		mapView.getOverlays().clear();
 
-		Drawable drawable = getResources().getDrawable(R.drawable.caducee);
-		drawable.setBounds(-drawable.getIntrinsicWidth() / 2, -drawable.getIntrinsicHeight(), drawable.getIntrinsicWidth() / 2, 0);
-		 MyPharmacyItemizedOverlay itemizedoverlay = new MyPharmacyItemizedOverlay(drawable, this);
+		Drawable drawableCaduceus = getResources().getDrawable(
+				R.drawable.caducee);
+		drawableCaduceus.setBounds(-drawableCaduceus.getIntrinsicWidth() / 2,
+				-drawableCaduceus.getIntrinsicHeight(), drawableCaduceus
+						.getIntrinsicWidth() / 2, 0);
+		MyPharmacyItemizedOverlay itemizedoverlay = new MyPharmacyItemizedOverlay(
+				drawableCaduceus, this);
 
 		ArrayList<MyPharmacy> list = myPharmacyManager.getPharmacyList();
 		for (int i = 0; i < list.size(); i++)
@@ -127,18 +127,23 @@ public class MyMapActivity extends MapActivity
 			MyPharmacy pharmacy = list.get(i);
 			GeoPoint gp = pharmacy.getGeoPoint();
 
-			OverlayItem oi = new OverlayItem(gp, pharmacy.getNom(), pharmacy.toCSV());
-			oi.setMarker(drawable);
+			OverlayItem oi = new OverlayItem(gp, String.valueOf(pharmacy
+					.getId()), pharmacy.getAdresse());
+			oi.setMarker(drawableCaduceus);
 			itemizedoverlay.addOverlay(oi);
 		}
-		
+
 		mapView.getOverlays().add(itemizedoverlay);
-		
+
 		GeoPoint currentGP = myPharmacyManager.getCurrentGeoPoint();
-		Drawable drawable2 = getResources().getDrawable(R.drawable.androidmarkerred);
-		drawable2.setBounds(-drawable2.getIntrinsicWidth() / 2, -drawable2.getIntrinsicHeight(), drawable2.getIntrinsicWidth() / 2, 0);
-		MyLocationItemizedOverlay itemizedoverlay2 = new MyLocationItemizedOverlay(drawable2, this);
-		OverlayItem overI = new OverlayItem(currentGP, myPharmacyManager.getCurrentLocation().toString(), "Position actuelle");
+		Drawable drawable2 = getResources().getDrawable(
+				R.drawable.androidmarkerred);
+		drawable2.setBounds(-drawable2.getIntrinsicWidth() / 2, -drawable2
+				.getIntrinsicHeight(), drawable2.getIntrinsicWidth() / 2, 0);
+		MyLocationItemizedOverlay itemizedoverlay2 = new MyLocationItemizedOverlay(
+				drawable2, this);
+		OverlayItem overI = new OverlayItem(currentGP, myPharmacyManager
+				.getCurrentLocation().toString(), "Position actuelle");
 		overI.setMarker(drawable2);
 		itemizedoverlay2.addOverlay(overI);
 
@@ -157,8 +162,8 @@ public class MyMapActivity extends MapActivity
 	public boolean onSearchRequested()
 	{
 		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
-		
+		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+
 		return super.onSearchRequested();
 	}
 

@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 import be.itsworking.dpl.to.MyPharmacy;
 
-public interface DAOMyPharmacy {
+public interface DAOMyPharmacy
+{
 
-    boolean deleteMyPharmacy(int id);
+	boolean deleteMyPharmacy(int id);
 
 	boolean insertMyPharmacy(MyPharmacy myPharmacy);
 
-    boolean updateMyPharmacy(MyPharmacy myPharmacy);
+	boolean updateMyPharmacy(MyPharmacy myPharmacy);
 
-    MyPharmacy loadMyPharmacy(int id);
-    
-    ArrayList<MyPharmacy> selectAllPharmacies();
-    
-    int countAll();
+	MyPharmacy loadMyPharmacy(int id);
 
-	boolean exist(MyPharmacy myPharmacy);
+	ArrayList<MyPharmacy> selectAllPharmacies();
+
+	int countAll();
 
 	boolean insertMyPharmacyList(ArrayList<MyPharmacy> locList);
+
+	boolean exist(int idPharmacy);
 }

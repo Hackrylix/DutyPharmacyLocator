@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnLongClickListener;
+import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -16,19 +16,40 @@ import be.itsworking.dpl.MyPharmacyManager;
 import be.itsworking.dpl.R;
 import be.itsworking.dpl.to.MyPharmacy;
 
-public class MyListActivity extends Activity implements OnLongClickListener
+public class MyListActivity extends Activity implements OnClickListener
 {
-
 	private MyPharmacyManager myPharmacyManager;
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		myPharmacyManager = new MyPharmacyManager(this,false);
-		refresh();
+		myPharmacyManager = (MyPharmacyManager) getIntent().getExtras().getSerializable("pharmacyManager");
+		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
+		ScrollView scrollView = new ScrollView(getApplicationContext());
 
+		linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+		for (MyPharmacy pharmacy : myPharmacyManager.getPharmacyList())
+		{
+			TextView textView = new TextView(getApplicationContext());
+			textView.setText(pharmacy.getName(), BufferType.NORMAL);
+			textView.setClickable(true);
+			textView.setOnClickListener(this);
+			linearLayout.addView(textView);
+		}
+
+		scrollView.addView(linearLayout);
+		setContentView(scrollView);
 	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		MenuInflater inflater = getMenuInflater();
@@ -36,6 +57,9 @@ public class MyListActivity extends Activity implements OnLongClickListener
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -51,49 +75,19 @@ public class MyListActivity extends Activity implements OnLongClickListener
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 */
 	@Override
-	protected void onResume()
-	{
-		refresh();
-		super.onResume();
-	}
-
-	private void refresh()
-	{
-		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
-		ScrollView scrollView = new ScrollView(getApplicationContext());
-		
-		linearLayout.setOrientation(LinearLayout.VERTICAL);
-
-		for (MyPharmacy pharmacy : myPharmacyManager.getPharmacyList())
-		{
-			TextView textView = new TextView(getApplicationContext());
-			textView.setText(String.valueOf(pharmacy.getId()), BufferType.NORMAL);
-			textView.setLongClickable(true);
-			textView.setOnLongClickListener(this);
-			linearLayout.addView(textView);
-		}
-		
-		scrollView.addView(linearLayout);
-		setContentView(scrollView);
-
-	}
-
-
-	@Override
-	public boolean onLongClick(View view)
+	public void onClick(View view)
 	{
 		if (view instanceof TextView)
 		{
 			TextView textView = (TextView) view;
 			Intent myPharmacyIntent = new Intent(this, MyPharmacyActivity.class);
-			myPharmacyIntent.putExtra("PHARMACY_ID", textView.getText().toString());
-			
+			myPharmacyIntent.putExtra("PHARMACY_NAME", textView.getText().toString());
 			startActivity(myPharmacyIntent);
-			return true;
 		}
-
-		return false;
 	}
 
 }

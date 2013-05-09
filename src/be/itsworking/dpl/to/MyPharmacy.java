@@ -5,41 +5,39 @@ import java.util.Calendar;
 
 import android.location.Location;
 
-import com.google.android.maps.GeoPoint;
+import com.google.android.gms.maps.model.LatLng;
 
 public class MyPharmacy
 {
 	private int id;
-	private String nom;
+	private String name;
 	private String adresse;
 	private String tel;
 	private Location location;
 	private boolean isOpen;
 	private Timestamp insertTS;
 	private Timestamp updateTS;
+	private LatLng latlng;
 
 	public MyPharmacy(int id, String nom, String address, String tel, double lat, double lng)
 	{
 		this.id = id;
-		this.nom = nom;
+		this.name = nom;
 		this.adresse = address;
 		this.tel = tel;
 
 		this.location = new Location("DB");
 		this.location.setLatitude(lat);
 		this.location.setLongitude(lng);
+		
+		this.latlng = new LatLng(lat, lng);
 
 		this.isOpen = true;
 		this.insertTS = new Timestamp(Calendar.getInstance().getTimeInMillis());
 		this.updateTS = new Timestamp(Calendar.getInstance().getTimeInMillis());
 	}
 
-	public GeoPoint getGeoPoint()
-	{
-		return new GeoPoint((int) (location.getLatitude() * 1E6),
-				(int) (location.getLongitude() * 1E6));
-	}
-
+	
 	/**
 	 * @return the id
 	 */
@@ -49,11 +47,11 @@ public class MyPharmacy
 	}
 
 	/**
-	 * @return the nom
+	 * @return the name
 	 */
-	public String getNom()
+	public String getName()
 	{
-		return nom;
+		return name;
 	}
 
 	/**
@@ -71,6 +69,24 @@ public class MyPharmacy
 	{
 		return tel;
 	}
+
+	/**
+	 * @return the latlng
+	 */
+	public LatLng getLatlng()
+	{
+		return latlng;
+	}
+
+
+	/**
+	 * @param latlng the latlng to set
+	 */
+	public void setLatlng(LatLng latlng)
+	{
+		this.latlng = latlng;
+	}
+
 
 	/**
 	 * @return the location
@@ -115,11 +131,11 @@ public class MyPharmacy
 
 	/**
 	 * @param nom
-	 *            the nom to set
+	 *            the name to set
 	 */
-	public void setNom(String nom)
+	public void setName(String nom)
 	{
-		this.nom = nom;
+		this.name = nom;
 	}
 
 	/**
@@ -168,7 +184,7 @@ public class MyPharmacy
 	}
 
 	/**
-	 * @param updateTS
+	 * @param updateTS 
 	 *            the updateTS to set
 	 */
 	public void setUpdateTS(Timestamp updateTS)

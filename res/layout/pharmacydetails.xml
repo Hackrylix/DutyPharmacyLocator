@@ -5,14 +5,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/pharmacyNom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
@@ -24,15 +23,17 @@
                 android:id="@+id/pharmacyPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1.04"
-                android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/callPhoneButton"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Call" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_call" />
+            
         </LinearLayout>
 
         <LinearLayout
@@ -44,15 +45,17 @@
                 android:id="@+id/pharmacyAdress"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/showAdressButton"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="ShowAdresse" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_mylocation" />
+
         </LinearLayout>
     </LinearLayout>
 

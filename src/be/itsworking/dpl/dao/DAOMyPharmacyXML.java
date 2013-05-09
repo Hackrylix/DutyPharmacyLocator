@@ -3,46 +3,36 @@
  */
 package be.itsworking.dpl.dao;
 
-import static be.itsworking.dpl.tools.Util.log;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import org.xmlpull.v1.XmlPullParser;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.widget.Toast;
-import be.itsworking.dpl.dao.DAOMyPharmacy;
 import be.itsworking.dpl.to.MyPharmacy;
-import be.itsworking.dpl.tools.Util;
 
 /**
- * @author hackrylix
- * 
+ * @author samary
+ *
  */
 public class DAOMyPharmacyXML implements DAOMyPharmacy
 {
 
+	/**
+	 * 
+	 */
 	private final ArrayList<MyPharmacy> pharmacyList;
-	private Context context;
 
-	public DAOMyPharmacyXML(Context context)
+	/**
+	 * 
+	 */
+	public DAOMyPharmacyXML()
 	{
 		this.pharmacyList = new ArrayList<MyPharmacy>();
-		this.context = context;
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
 
@@ -91,6 +81,9 @@ public class DAOMyPharmacyXML implements DAOMyPharmacy
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see be.itsworking.dpl.dao.DAOMyPharmacy#exist(int)
+	 */
 	@Override
 	public boolean exist(int idPharmacy)
 	{
@@ -116,22 +109,22 @@ public class DAOMyPharmacyXML implements DAOMyPharmacy
 		return false;
 	}
 
+	
+	/* (non-Javadoc)
+	 * @see be.itsworking.dpl.dao.DAOMyPharmacy#insertMyPharmacyList(java.util.ArrayList)
+	 */
 	@Override
 	public boolean insertMyPharmacyList(ArrayList<MyPharmacy> listToInsert)
 	{
 		boolean ok = true;
-
 		for (MyPharmacy myPharmacy : listToInsert)
-		{
 			ok = insertMyPharmacy(myPharmacy);
-		}
 		return ok;
-
 	}
 
-	/**
-	 * 
-	 * @see be.itsworking.dpl.dao.DAOMyPharmacy#updateMyPharmacy(be.itsworking.dpl.MyPharmacy)
+
+	/* (non-Javadoc)
+	 * @see be.itsworking.dpl.dao.DAOMyPharmacy#updateMyPharmacy(be.itsworking.dpl.to.MyPharmacy)
 	 */
 	@Override
 	public boolean updateMyPharmacy(MyPharmacy myPharmacy)
@@ -155,11 +148,20 @@ public class DAOMyPharmacyXML implements DAOMyPharmacy
 				return pharmacy;
 		}
 		return null;
-
 	}
 
-	/**
-	 * 
+	@Override
+	public MyPharmacy loadMyPharmacy(String name)
+	{
+		for (MyPharmacy pharmacy : pharmacyList)
+		{
+			if (pharmacy.getName().equals(name))
+				return pharmacy;
+		}
+		return null;
+	}
+
+	/* (non-Javadoc)
 	 * @see be.itsworking.dpl.dao.DAOMyPharmacy#selectAllPharmacies()
 	 */
 	@Override

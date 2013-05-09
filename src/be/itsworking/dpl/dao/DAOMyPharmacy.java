@@ -6,20 +6,15 @@ import be.itsworking.dpl.to.MyPharmacy;
 
 public interface DAOMyPharmacy
 {
-
+	MyPharmacy loadMyPharmacy(int id);
+	MyPharmacy loadMyPharmacy(String name);
 	boolean deleteMyPharmacy(int id);
-
 	boolean insertMyPharmacy(MyPharmacy myPharmacy);
-
 	boolean updateMyPharmacy(MyPharmacy myPharmacy);
 
-	MyPharmacy loadMyPharmacy(int id);
-
 	ArrayList<MyPharmacy> selectAllPharmacies();
-
-	int countAll();
-
 	boolean insertMyPharmacyList(ArrayList<MyPharmacy> locList);
 
+	int countAll();
 	boolean exist(int idPharmacy);
 }

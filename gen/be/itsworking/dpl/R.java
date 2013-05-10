@@ -128,38 +128,54 @@ containing a value of this type.
          */
         public static final int zOrderOnTop=0x7f01000d;
     }
+    public static final class dimen {
+        /**  Default screen margins, per the Android Design guidelines. 
+
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
+         */
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+    }
     public static final class drawable {
         public static final int caducee=0x7f020000;
         public static final int caduceus=0x7f020001;
     }
     public static final class id {
-        public static final int LinearLayout01=0x7f040009;
-        public static final int callPhoneButton=0x7f04000d;
+        public static final int LinearLayout01=0x7f04000a;
+        public static final int action_settings=0x7f040012;
+        public static final int callPhoneButton=0x7f04000e;
         public static final int emptylayout1=0x7f040005;
         public static final int hybrid=0x7f040004;
-        public static final int item1=0x7f040010;
-        public static final int linearLayout1=0x7f040006;
-        public static final int linearLayout3=0x7f040007;
-        public static final int log=0x7f040008;
-        public static final int map=0x7f04000a;
+        public static final int item1=0x7f040011;
+        public static final int linearLayout1=0x7f040007;
+        public static final int linearLayout3=0x7f040008;
+        public static final int listView1=0x7f040006;
+        public static final int log=0x7f040009;
+        public static final int map=0x7f04000b;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
-        public static final int pharmacyAdress=0x7f04000e;
-        public static final int pharmacyNom=0x7f04000b;
-        public static final int pharmacyPhone=0x7f04000c;
+        public static final int pharmacyAdress=0x7f04000f;
+        public static final int pharmacyNom=0x7f04000c;
+        public static final int pharmacyPhone=0x7f04000d;
         public static final int satellite=0x7f040002;
-        public static final int showAdressButton=0x7f04000f;
+        public static final int showAdressButton=0x7f040010;
         public static final int terrain=0x7f040003;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int maplayout=0x7f030001;
-        public static final int pharmacydetails=0x7f030002;
+        public static final int activity_duty_pharmacy_locator=0x7f030000;
+        public static final int activity_my_list=0x7f030001;
+        public static final int activity_my_map=0x7f030002;
+        public static final int activity_my_pharmacy=0x7f030003;
+        public static final int activity_my_settings=0x7f030004;
     }
     public static final class menu {
-        public static final int mainmenu=0x7f060000;
+        public static final int mainmenu=0x7f070000;
+        public static final int my_settings=0x7f070001;
     }
     public static final class string {
+        public static final int action_settings=0x7f05001b;
         public static final int app_name=0x7f050011;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
          */
@@ -224,6 +240,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f05000d;
         public static final int gps=0x7f050018;
+        public static final int hello_world=0x7f05001c;
         public static final int load=0x7f050015;
         public static final int log=0x7f050013;
         public static final int main=0x7f050012;
@@ -231,6 +248,7 @@ containing a value of this type.
         public static final int quit=0x7f050014;
         public static final int refresh=0x7f050017;
         public static final int save=0x7f050016;
+        public static final int title_activity_my_settings=0x7f05001a;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

@@ -11,8 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
-import be.itsworking.dpl.MyPharmacyManager;
 import be.itsworking.dpl.R;
+import be.itsworking.dpl.data.DAOMyPharmacyXML;
 import be.itsworking.dpl.to.MyPharmacy;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MyMapActivity extends FragmentActivity implements OnMyLocationChangeListener, OnInfoWindowClickListener
 {
-	private MyPharmacyManager myPharmacyManager;
+	
 	private GoogleMap map = null;
 
 	/** Called when the activity is first created. */
@@ -36,8 +36,7 @@ public class MyMapActivity extends FragmentActivity implements OnMyLocationChang
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.maplayout);
-		myPharmacyManager = (MyPharmacyManager) getIntent().getExtras().getSerializable("pharmacyManager");
+		setContentView(R.layout.activity_my_map);
 		setUpMapIfNeeded();
 	}
 
@@ -63,13 +62,14 @@ public class MyMapActivity extends FragmentActivity implements OnMyLocationChang
 
 	private void setUpMap()
 	{
-		map.setMyLocationEnabled(true);
+		
 		UiSettings settings = map.getUiSettings();
 		settings.setAllGesturesEnabled(true);
+		map.animateCamera(CameraUpdateFactory.zoomTo(16));
+		map.setMyLocationEnabled(true);
 		map.setOnInfoWindowClickListener(this);
 		map.setOnMyLocationChangeListener(this);
-
-		ArrayList<MyPharmacy> list = myPharmacyManager.getPharmacyList();
+		ArrayList<MyPharmacy> list = DAOMyPharmacyXML.selectAllPharmacies();
 		for (MyPharmacy pharmacy : list)
 		{
 			MarkerOptions markerOption = new MarkerOptions();

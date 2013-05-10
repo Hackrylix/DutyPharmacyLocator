@@ -2,6 +2,7 @@ package be.itsworking.dpl.to;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Random;
 
 import android.location.Location;
 
@@ -32,7 +33,7 @@ public class MyPharmacy
 		
 		this.latlng = new LatLng(lat, lng);
 
-		this.isOpen = true;
+		this.isOpen = new Random().nextBoolean();
 		this.insertTS = new Timestamp(Calendar.getInstance().getTimeInMillis());
 		this.updateTS = new Timestamp(Calendar.getInstance().getTimeInMillis());
 	}

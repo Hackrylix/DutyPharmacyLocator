@@ -12,41 +12,50 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
-import be.itsworking.dpl.MyPharmacyManager;
 import be.itsworking.dpl.R;
+import be.itsworking.dpl.data.DAOMyPharmacyXML;
 import be.itsworking.dpl.to.MyPharmacy;
 
 public class MyListActivity extends Activity implements OnClickListener
 {
-	private MyPharmacyManager myPharmacyManager;
 
-	/* (non-Javadoc)
+	private LinearLayout linearLayout = null;
+	private ScrollView scrollView = null;
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		myPharmacyManager = (MyPharmacyManager) getIntent().getExtras().getSerializable("pharmacyManager");
-		LinearLayout linearLayout = new LinearLayout(getApplicationContext());
-		ScrollView scrollView = new ScrollView(getApplicationContext());
+		if (linearLayout == null)
+			linearLayout = new LinearLayout(getApplicationContext());
+		if (scrollView == null)
+			scrollView = new ScrollView(getApplicationContext());
 
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
-
-		for (MyPharmacy pharmacy : myPharmacyManager.getPharmacyList())
+		if (linearLayout.getChildCount() == 0)
 		{
-			TextView textView = new TextView(getApplicationContext());
-			textView.setText(pharmacy.getName(), BufferType.NORMAL);
-			textView.setClickable(true);
-			textView.setOnClickListener(this);
-			linearLayout.addView(textView);
+			for (MyPharmacy pharmacy : DAOMyPharmacyXML.selectAllPharmacies())
+			{
+				TextView textView = new TextView(getApplicationContext());
+				textView.setText(pharmacy.getName(), BufferType.NORMAL);
+				textView.setClickable(true);
+				textView.setOnClickListener(this);
+				linearLayout.addView(textView);
+			}
 		}
 
 		scrollView.addView(linearLayout);
 		setContentView(scrollView);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
 	 */
 	@Override
@@ -57,7 +66,9 @@ public class MyListActivity extends Activity implements OnClickListener
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
 	 */
 	@Override
@@ -75,7 +86,9 @@ public class MyListActivity extends Activity implements OnClickListener
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	@Override

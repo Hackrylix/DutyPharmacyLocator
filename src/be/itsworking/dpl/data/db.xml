@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<duty>
+	<pharmacy code="210836" lat="50.8752689" lng="4.3479249" distance="1.2676452155">
+		<name>Schartz Christian</name>
+		<pharmacist>Schartz Christian</pharmacist>
+		<address>Boulevard Emile Bockstael 169</address>
+		<postalcode>1020</postalcode>
+		<city>Laeken</city>
+		<phone>024264722</phone>
+		<url>http://www.aposite.be/schartz1020</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="212201" lat="50.8732105" lng="4.3257109" distance="1.3762492922">
+		<name>Franz</name>
+		<pharmacist>Franz</pharmacist>
+		<address>Rue L&#233;on Th&#233;odor 11</address>
+		<postalcode>1090</postalcode>
+		<city>Jette</city>
+		<phone>024269322</phone>
+		<url>http://www.aposite.be/franz1090</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="210507" lat="50.8667282" lng="4.3050731" distance="2.879121475">
+		<name>Grisard</name>
+		<pharmacist>Grisard</pharmacist>
+		<address>Avenue Josse Goffin 151</address>
+		<postalcode>1082</postalcode>
+		<city>Berchem-Ste-Agathe</city>
+		<phone>024659381</phone>
+		<url>http://www.aposite.be/la1082</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="212633" lat="50.8566341" lng="4.3391453" distance="3.0288706651">
+		<name>Maazouzi Meriem</name>
+		<pharmacist>Maazouzi Meriem</pharmacist>
+		<address>Parvis Saint Jean Baptiste 19</address>
+		<postalcode>1080</postalcode>
+		<city>Molenbeek-St-Jean</city>
+		<phone>024118713</phone>
+		<url>http://www.aposite.be/medmexmeriem1080</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="213212" lat="50.8705631" lng="4.3753753" distance="3.1375537766">
+		<name>Lambotte - Grymonprez</name>
+		<pharmacist>Lambotte - Grymonprez</pharmacist>
+		<address>Avenue Mar&#233;chal Foch 77</address>
+		<postalcode>1030</postalcode>
+		<city>Schaerbeek</city>
+		<phone>022164630</phone>
+		<url>http://www.aposite.be/foch1030</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="210758" lat="50.8488538" lng="4.3506542" distance="4.0220854804">
+		<name>R&#233;gnier Roland</name>
+		<pharmacist>R&#233;gnier Roland</pharmacist>
+		<address>Rue du March&#233; aux Poulets 37</address>
+		<postalcode>1000</postalcode>
+		<city>Bruxelles</city>
+		<phone>025113590</phone>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="213201" lat="50.861549" lng="4.3826505" distance="4.1105936951">
+		<name>Nour Meriem</name>
+		<pharmacist>Nour Meriem</pharmacist>
+		<address>Rue des P&#226;querettes 77</address>
+		<postalcode>1030</postalcode>
+		<city>Schaerbeek</city>
+		<phone>022156277</phone>
+		<url>http://www.aposite.be/nour1030</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="213018" lat="50.8508553" lng="4.3769082" distance="4.6602592797">
+		<name>Lecompte</name>
+		<pharmacist>Lecompte</pharmacist>
+		<address>Rue Braemt 56/58</address>
+		<postalcode>1210</postalcode>
+		<city>St-Josse-ten-Noode</city>
+		<phone>022175042</phone>
+		<url>http://www.aposite.be/saintjosse1210</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="211224" lat="50.8401538" lng="4.3751408" distance="5.582798229">
+		<name>Billiet Ann</name>
+		<pharmacist>Billiet Ann</pharmacist>
+		<address>Rue Montoyer 58</address>
+		<postalcode>1000</postalcode>
+		<city>Etterbeek</city>
+		<phone>022300073</phone>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="212824" lat="50.8340012" lng="4.356852" distance="5.7318658291">
+		<name>Hanna-Francis - Houeis</name>
+		<pharmacist>Hanna-Francis - Houeis</pharmacist>
+		<address>Avenue Louise 49</address>
+		<postalcode>1060</postalcode>
+		<city>St-Gilles</city>
+		<phone>025380331</phone>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="210101" lat="50.8347886" lng="4.3070354" distance="5.8173980114">
+		<name>Cornelis Bernadette</name>
+		<pharmacist>Cornelis Bernadette</pharmacist>
+		<address>Rue de Veeweyde 6</address>
+		<postalcode>1070</postalcode>
+		<city>Anderlecht</city>
+		<phone>025216052</phone>
+		<url>http://www.aposite.be/becofar1070</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="231604" lat="50.8451142" lng="4.2786073" distance="5.8925500966">
+		<name>APOTEEK GERMONPRE</name>
+		<pharmacist>GERMONPRE Philippe</pharmacist>
+		<address>Ninoofsesteenweg 70</address>
+		<postalcode>1700</postalcode>
+		<city>DILBEEK</city>
+		<phone>025694214</phone>
+		<url>http://www.aposite.be/apodi1700</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="210132" lat="50.8347342" lng="4.2899335" distance="6.3425993482">
+		<name>Rosseels</name>
+		<pharmacist>Rosseels</pharmacist>
+		<address>Avenue d&#39;Itterbeek 184</address>
+		<postalcode>1070</postalcode>
+		<city>Anderlecht</city>
+		<phone>025227050</phone>
+		<url>http://www.aposite.be/deruyckrosseels1070</url>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="211603" lat="50.8263553" lng="4.3298619" distance="6.4050004975">
+		<name>Boisbourdin</name>
+		<pharmacist>Boisbourdin</pharmacist>
+		<address>Rue du Mont&#233;n&#233;gro 181</address>
+		<postalcode>1190</postalcode>
+		<city>Forest</city>
+		<phone>025378353</phone>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="211218" lat="50.8282751" lng="4.3853805" distance="7.0881832058">
+		<name>Barchid Abdel</name>
+		<pharmacist>Barchid Abdel</pharmacist>
+		<address>Rue de Haerne 171</address>
+		<postalcode>1040</postalcode>
+		<city>Etterbeek</city>
+		<phone>026483200</phone>
+		<hours>10/05/2013 de 09:00 &#224; 19:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="567402" lat="50.3088769" lng="4.1528817" distance="2.5762368265">
+		<name>PHARMACIE BLAMPAIN</name>
+		<pharmacist>Blampain</pharmacist>
+		<address>Rue De La Halle 5A</address>
+		<postalcode>6560</postalcode>
+		<city>Solre-Sur-Sambre</city>
+		<phone>071555177</phone>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="562301" lat="50.3966074" lng="4.096687" distance="8.7021766607">
+		<name>PHARMACIE HENAUT</name>
+		<pharmacist>D&#39;HAENENS</pharmacist>
+		<address>Chauss&#233;e Brunehaut 252</address>
+		<postalcode>7120</postalcode>
+		<city>Estinnes-Au-Mont</city>
+		<phone>064332451</phone>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="561102" lat="50.4121431" lng="4.1680094" distance="10.7843867754">
+		<name>Pharmacie du Pav&#233; de Charleroi</name>
+		<pharmacist>Attianese Ornella</pharmacist>
+		<address>Avenue Wanderpepen 8</address>
+		<postalcode>7130</postalcode>
+		<city>BINCHE</city>
+		<phone>064331091</phone>
+		<fax>064370071</fax>
+		<hours>10/05/2013 de 08:30 &#224; 22:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="552603" lat="50.4572353" lng="4.0991457" distance="15.3558937932">
+		<name>Pharmacie Multipharma Maurage</name>
+		<pharmacist>SCAILLET</pharmacist>
+		<address>Place de Maurage 16</address>
+		<postalcode>7110</postalcode>
+		<city>MAURAGE</city>
+		<phone>064662053</phone>
+		<fax>064662053</fax>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="553801" lat="50.4662102" lng="4.1692355" distance="16.6303139041">
+		<name>FAMILIA SAINT-VAAST</name>
+		<pharmacist>LEFEBVRE</pharmacist>
+		<address>Rue Urbain 128</address>
+		<postalcode>7100</postalcode>
+		<city>SAINT-VAAST</city>
+		<phone>064223030</phone>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="561501" lat="50.4532576" lng="4.2618429" distance="17.883815865">
+		<name>PHARMACIE SCHNITZLER Carni&#232;res</name>
+		<pharmacist>SCHNITZLER Guy</pharmacist>
+		<address>Rue Royale 149</address>
+		<postalcode>7141</postalcode>
+		<city>CARNIERES</city>
+		<phone>064442646</phone>
+		<fax>064449509</fax>
+		<hours>10/05/2013 de 08:30 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="536301" lat="50.4732896" lng="4.0087885" distance="18.8331768846">
+		<name>GOSSELIN</name>
+		<pharmacist>GOSSELIN Michel</pharmacist>
+		<address>PLACE D&#39;OBOURG 21</address>
+		<postalcode>7034</postalcode>
+		<city>OBOURG</city>
+		<phone>065353331</phone>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="535311" lat="50.449046" lng="3.9491385" distance="18.850281068">
+		<name>MARIAGE</name>
+		<pharmacist>MARIAGE</pharmacist>
+		<address>RUE DE BERTAIMONT 20</address>
+		<postalcode>7000</postalcode>
+		<city>MONS</city>
+		<phone>065351064</phone>
+		<url>http://www.aposite.be/mariage</url>
+		<hours>10/05/2013 de 08:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+	<pharmacy code="532502" lat="50.3952995" lng="3.8711647" distance="19.6298873359">
+		<name>Wamviphar SA</name>
+		<pharmacist>WAMBERSY Vincent</pharmacist>
+		<address>Rue de l&#39;Aisette 16</address>
+		<postalcode>7080</postalcode>
+		<city>EUGIES</city>
+		<phone>065663900</phone>
+		<fax>065664014</fax>
+		<hours>10/05/2013 de 09:00 &#224; 24:00&lt;br/&gt;</hours>
+		<label>de garde</label>
+		<labeltype>1</labeltype>
+	</pharmacy>
+</duty>

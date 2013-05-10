@@ -10,13 +10,20 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import be.itsworking.dpl.R;
-import be.itsworking.dpl.dao.DAOMyPharmacyXML;
+import be.itsworking.dpl.data.DAOMyPharmacyXML;
 import be.itsworking.dpl.to.MyPharmacy;
 
+/**
+ * @author samary
+ *
+ */
 public class MyPharmacyActivity extends Activity
 {
 	private MyPharmacy currentPharmacy;
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -31,15 +38,15 @@ public class MyPharmacyActivity extends Activity
 			{
 				pharmacyId = extras.getInt("PHARMACY_ID");
 				if (pharmacyId > 0)
-					currentPharmacy = new DAOMyPharmacyXML().loadMyPharmacy(pharmacyId);
+					currentPharmacy = DAOMyPharmacyXML.loadMyPharmacy(pharmacyId);
 			}
 			else if (extras.containsKey("PHARMACY_NAME"))
 			{
 				String pharmacyName = sender.getExtras().getString("PHARMACY_NAME");
 				if (pharmacyName != null)
-					currentPharmacy = new DAOMyPharmacyXML().loadMyPharmacy(pharmacyName);
+					currentPharmacy = DAOMyPharmacyXML.loadMyPharmacy(pharmacyName);
 			}
-			setContentView(R.layout.pharmacydetails);
+			setContentView(R.layout.activity_my_pharmacy);
 			TextView nomText = (TextView) findViewById(R.id.pharmacyNom);
 			nomText.setText(currentPharmacy.getName(), BufferType.EDITABLE);
 
@@ -54,6 +61,9 @@ public class MyPharmacyActivity extends Activity
 
 			phoneButton.setOnClickListener(new OnClickListener() {
 
+				/* (non-Javadoc)
+				 * @see android.view.View.OnClickListener#onClick(android.view.View)
+				 */
 				@Override
 				public void onClick(View v)
 				{
@@ -64,6 +74,9 @@ public class MyPharmacyActivity extends Activity
 
 			adresseButton.setOnClickListener(new OnClickListener() {
 
+				/* (non-Javadoc)
+				 * @see android.view.View.OnClickListener#onClick(android.view.View)
+				 */
 				@Override
 				public void onClick(View view)
 				{

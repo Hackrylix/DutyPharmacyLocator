@@ -1,4 +1,4 @@
-package be.itsworking.dpl;
+package be.itsworking.dpl.data;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

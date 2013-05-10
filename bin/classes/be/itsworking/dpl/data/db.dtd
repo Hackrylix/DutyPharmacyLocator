@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE duty SYSTEM "db.dtd">
+
+    <duty>
+    ...
+    </duty>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT duty (pharmacy)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT pharmacy (labeltype|label|hours|phone|city|postalcode|address|pharmacist|name)*>
+<!ATTLIST pharmacy
+    distance CDATA #IMPLIED
+    lng CDATA #IMPLIED
+    lat CDATA #IMPLIED
+    code CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT name (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT pharmacist (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT address (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT postalcode (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT city (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT phone (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT hours (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT label (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT labeltype (#PCDATA)>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Duty Pharmacy Locator</string>
     <string name="main">Map</string>
     <string name="log">Positions</string>
@@ -9,5 +10,8 @@
     <string name="refresh">Refresh</string>
     <string name="gps">GPS</string>
     <string name="net">NETWORK</string>
+    <string name="title_activity_my_settings">MySettingsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -24,8 +24,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight="1.04"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageButton
                 android:id="@+id/callPhoneButton"

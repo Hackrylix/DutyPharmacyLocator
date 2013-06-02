@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dutypharmacylocator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dutypharmacylocator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
